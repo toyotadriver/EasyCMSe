@@ -1,0 +1,7 @@
+body{
+    width: 100%;
+    display: -moz-box;
+    display: -webkit-box;
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+}
