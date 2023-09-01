@@ -12,6 +12,7 @@ body{
     display: flex;
     flex-direction: column;
     -webkit-box-pack: center;
+    min-height: calc(100vh - 144px);
 }
 .m-col-el{
     width: 60%;
@@ -43,6 +44,7 @@ header{
 }
 #h-logo{
     width:fit-content;
+    cursor: pointer;
 }
 img{
     width: fit-content;
@@ -59,14 +61,15 @@ img{
 .h-elem #address{
     width: fit-content;
 }
-#h-login{
+#h-login, .h-white-button{
     margin-right: 0px;
     margin-left: auto;
     padding: 0px 10px 0px 10px;
     border-radius: 5px;
     box-shadow: black 0px 0px 7px;
+    cursor: pointer;
 }
-#h-login p{
+#h-login, .h-white-button p{
     line-height: 1%;
 }
 .navbar{
