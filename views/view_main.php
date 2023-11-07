@@ -29,10 +29,13 @@
         <img class='list-circle' src='svgs/Ellipse1.svg'><span class="marked-list">Глобулин, связывающий половые
             гормоны</span>
     </div>
-    <span class="price">Всего 2800₽</span><span class="old-price">3500₽</span>
+    <div class='prices'>
+        <span class="price">Всего 2800₽</span><span class="old-price">3500₽</span>
+    </div>
+    <div class='buttons-div'>
+        <button class="button-regular" class="btn">Записаться</button><button class="button-regular button-white">Подробнее</button>
+    </div>
 </div>
-<button class="button-regular" class="btn">Записаться</button><button
-    class="button-regular button-white">Подробнее</button>
 
 </div>
 

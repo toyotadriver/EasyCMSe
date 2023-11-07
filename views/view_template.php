@@ -6,6 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site template</title>
     <link href="styles/main_style.css" rel="stylesheet">
+    <?php
+    @include_jsmodule($data['js_modules']);
+    include_scripts($data['HEAD_scripts']);
+    //print_r($data);
+        function include_jsmodule($jsmodules){
+            foreach ($jsmodules as $jsmodule)
+            echo "<script type='module' src=" . $jsmodule . "></script>";
+        }
+        function include_scripts($scripts){
+            foreach ($scripts as $pair){
+                $script = $pair['script'];
+                $params = '';
+                if(isset($pair['params']) && count($pair['params']) > 0) {
+                    $params = implode(' ', $pair['params']);
+                }
+                echo "<script $params src=" . $script . "></script>";
+            }
+        }
+    ?>
 </head>
 <body>
 <div id='fixed-header'>
@@ -23,13 +42,12 @@
             </div>
             <?php 
             //НЕт пока что
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 1) {
-                echo "<div class='h-white-button'" .  'onclick="' . "location.href='medtable'" . '"><p>Ваш чек-ап</p></div>';
+            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == TRUE) {
+                echo "<div class='h-white-button'" .  'onclick="' . "location.href='medtests'" . '"><p>Ваш чек-ап</p></div>';
                 echo "<div id=" . "h-login" . " onclick=" . "location.href='logout'" . "><p>Выйти</p></div>";
             } else{
                 echo "<div id=" . "h-login" . " onclick=" . "location.href='login'" . "><p>Войти</p></div>";
             };
-
             ?>
             
         </div>

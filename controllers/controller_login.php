@@ -5,8 +5,6 @@ class Controller_Login extends Controller
     public $view;
     function __construct()
     {
-
-
         $this->view = new View();
     }
     public function action_index()
@@ -23,8 +21,8 @@ class Controller_Login extends Controller
                 $_SESSION['username'] = $data['first_name'];
                 $_SESSION['userid'] = $data['id'];
                 $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-                $addr = $_SERVER['SERVER_ADDR'];
-                header("Location: $addr");
+                
+                header("Location: main");
             } else {
                 $error = 'Неправильные логин или пароль';
                 $this->view->generate('view_login.php', 'view_template.php', $error);
