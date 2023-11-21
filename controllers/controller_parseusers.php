@@ -1,14 +1,12 @@
 <?php
 class Controller_Parseusers extends Controller{
-    
+    function __construct() {
+        $this->model = new Model_Parseusers;
+        $this->view = new View;
+    }
     function action_index(){
-        if (isset($_POST)) {
-            echo 'Все классно';
-            $accept = file_get_contents('php://input');
-            echo "<font style='color:red;'>" . $_SERVER['HTTP_ACCEPT'] . "</font>";
-        } else {
-            header('Location: main');
-        }
+        $data = $this->model->get_data();
+        $this->view->text($data); 
     }
 }
 ?>

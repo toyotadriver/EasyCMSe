@@ -18,8 +18,6 @@ window.addEventListener('load', function () {
             console.log('Щас будет')
             const xhrs = new XMLHttpRequest()
             xhrs.open('POST', 'parseusers')
-            xhrs.setRequestHeader('Content-Type', 'application/json')
-            xhrs.setRequestHeader('Accept', 'application/json')
             xhrs.send([users])
 
             xhrs.onload = function () {

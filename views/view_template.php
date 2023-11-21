@@ -8,7 +8,7 @@
     <link href="styles/main_style.css" rel="stylesheet">
     <?php
     @include_jsmodule($data['js_modules']);
-    include_scripts($data['HEAD_scripts']);
+    @include_scripts($data['HEAD_scripts']);
     //print_r($data);
         function include_jsmodule($jsmodules){
             foreach ($jsmodules as $jsmodule)
